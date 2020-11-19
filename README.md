@@ -20,16 +20,18 @@ import React from 'react'
 import { render } from 'react-dom'
 import { fractal } from '@fract/core'
 import { Alive } from '@fract/react-alive'
-import { Pathname, redirect } from '@fract/browser-pathname'
+import { Pathname } from '@fract/browser-pathname'
 
 const App = fractal(async function* () {
+    const pathname = new Pathname()
+
     while (true) {
-        switch (yield* Pathname) {
+        switch (yield* pathname) {
             case '/':
-                yield <a onClick={() => redirect('/test')}>Go to test page</a>
+                yield <a onClick={() => pathname.redirect('/test')}>Go to test page</a>
                 continue
             case '/test':
-                yield <a onClick={() => redirect('/')}>Go to home page</a>
+                yield <a onClick={() => pathname.redirect('/')}>Go to home page</a>
                 continue
         }
     }
