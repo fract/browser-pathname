@@ -1,19 +1,21 @@
-import { fractal, tmp } from '@fract/core'
+import { Fractal, fraction } from '@fract/core'
 
-export const Pathname = fractal(async function* _Pathname() {
-    while (true) {
-        yield tmp(window.location.pathname)
-        await new Promise((r) => {
-            const listener = () => {
-                window.removeEventListener('popstate', listener)
-                r()
-            }
-            window.addEventListener('popstate', listener)
-        })
+export class Pathname extends Fractal<string> {
+    async *collector() {
+        const value = fraction(window.location.pathname)
+        const listener = () => value.set(window.location.pathname)
+
+        window.addEventListener('popstate', listener)
+
+        try {
+            yield value as any // TODO: need fix
+        } finally {
+            window.removeEventListener('popstate', listener)
+        }
     }
-})
 
-export function redirect(pathname: string) {
-    window.history.pushState(null, '', pathname)
-    dispatchEvent(new PopStateEvent('popstate'))
+    redirect(pathname: string) {
+        window.history.pushState(null, '', pathname)
+        dispatchEvent(new PopStateEvent('popstate'))
+    }
 }

@@ -1,1 +1,1 @@
-export { Pathname, redirect } from './pathname'
+export { Pathname } from './pathname'

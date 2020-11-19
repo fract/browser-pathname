@@ -2,19 +2,23 @@
  * @jest-environment jsdom
  */
 
-import { live } from '@fract/core'
-import { Pathname, redirect } from '../src/pathname'
+import { stream } from '@fract/core'
+import { Pathname } from '../src/pathname'
 
-let promise = live(Pathname)
+const pathname = new Pathname()
+const iterator = stream(pathname)
 
 it('initial pathname to be "/"', async () => {
-    const frame = await promise
-    promise = frame.next
-    expect(frame.data).toBe('/')
+    const { value } = await iterator.next()
+    expect(value).toBe('/')
 })
 
 it('redirect to "/test"', async () => {
-    redirect('/test')
-    const frame = await promise
-    expect(frame.data).toBe('/test')
+    pathname.redirect('/test')
+    const { value } = await iterator.next()
+    expect(value).toBe('/test')
+})
+
+it('should remove listener when destroy', async () => {
+    iterator.return()
 })
