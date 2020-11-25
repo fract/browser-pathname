@@ -1,7 +1,7 @@
 {
     "name": "@fract/browser-pathname",
     "description": "Browser pathname fractal and redirect method",
-    "version": "0.2.0-sync.1",
+    "version": "0.2.0-sync.2",
     "author": "Denis Churbanov",
     "license": "MIT",
     "repository": {
