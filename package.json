@@ -20,10 +20,10 @@
         "prepublishOnly": "npm run build"
     },
     "peerDependencies": {
-        "@fract/core": "^0.2.0-sync.13"
+        "@fract/core": "^0.2.0-sync.14"
     },
     "devDependencies": {
-        "@fract/core": "^0.2.0-sync.13",
+        "@fract/core": "^0.2.0-sync.14",
         "@rollup/plugin-commonjs": "^13.0.0",
         "@rollup/plugin-node-resolve": "^8.1.0",
         "@types/jest": "^26.0.4",
