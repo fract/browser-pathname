@@ -1,7 +1,7 @@
 {
     "name": "@fract/browser-pathname",
     "description": "Browser pathname fractal and redirect method",
-    "version": "0.2.0",
+    "version": "0.2.1",
     "author": "Denis Churbanov",
     "license": "MIT",
     "repository": {
@@ -20,10 +20,10 @@
         "prepublishOnly": "npm run build"
     },
     "peerDependencies": {
-        "@fract/core": "^0.2.0-beta.3"
+        "@fract/core": "^0.2.0"
     },
     "devDependencies": {
-        "@fract/core": "^0.2.0-beta.3",
+        "@fract/core": "^0.2.0",
         "@rollup/plugin-commonjs": "^13.0.0",
         "@rollup/plugin-node-resolve": "^8.1.0",
         "@types/jest": "^26.0.4",

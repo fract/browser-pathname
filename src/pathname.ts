@@ -1,14 +1,15 @@
-import { Fractal, fraction } from '@fract/core'
+import { Computed, Context } from '@fract/core'
 
-export class Pathname extends Fractal<string> {
-    async *collector() {
-        const value = fraction(window.location.pathname)
-        const listener = () => value.set(window.location.pathname)
+export class Pathname extends Computed<string> {
+    *stream(ctx: Context) {
+        const listener = () => ctx.update()
 
         window.addEventListener('popstate', listener)
 
         try {
-            yield value as any // TODO: need fix
+            while (true) {
+                yield window.location.pathname
+            }
         } finally {
             window.removeEventListener('popstate', listener)
         }
