@@ -1,7 +1,7 @@
-import { Computed, RootContext } from '@fract/core'
+import { Computed, Context } from '@fract/core'
 
 export class Pathname extends Computed<string> {
-    *stream(ctx: RootContext) {
+    *stream(ctx: Context) {
         const listener = () => ctx.update()
 
         window.addEventListener('popstate', listener)
