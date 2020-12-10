@@ -16,11 +16,9 @@ npm i @fract/browser-pathname
 ## Usage
 
 ```tsx
-import React from 'react'
-import { render } from 'react-dom'
 import { fractal } from '@fract/core'
-import { Alive } from '@fract/react-alive'
 import { Pathname } from '@fract/browser-pathname'
+import { render } from '@fract/jsx'
 
 const App = fractal(async function* () {
     const pathname = new Pathname()
@@ -37,5 +35,5 @@ const App = fractal(async function* () {
     }
 })
 
-render(<Alive target={App} />, document.getElementById('app'))
+render(new App(), document.getElementById('app'))
 ```
