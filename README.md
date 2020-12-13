@@ -20,7 +20,7 @@ import { fractal } from '@fract/core'
 import { pathname, redirect } from '@fract/browser-pathname'
 import { render } from '@fract/jsx'
 
-const App = fractal(function* () {
+const app = fractal(function* () {
     while (true) {
         switch (yield* pathname) {
             case '/':
@@ -33,5 +33,5 @@ const App = fractal(function* () {
     }
 })
 
-render(new App(), document.getElementById('app'))
+render(app)
 ```
