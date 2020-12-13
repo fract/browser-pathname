@@ -14,9 +14,4 @@ export class Pathname extends Computed<string> {
             window.removeEventListener('popstate', listener)
         }
     }
-
-    redirect(pathname: string) {
-        window.history.pushState(null, '', pathname)
-        dispatchEvent(new PopStateEvent('popstate'))
-    }
 }
