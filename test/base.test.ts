@@ -3,10 +3,9 @@
  */
 
 import { watch } from '@fract/core'
-import { Pathname } from '../src/pathname'
+import { pathname } from '../src/pathname'
 import { redirect } from '../src/utils'
 
-const pathname = new Pathname()
 const mock = jest.fn()
 const dispose = watch(pathname, mock)
 

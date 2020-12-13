@@ -1,17 +1,15 @@
-import { Computed, Context } from '@fract/core'
+import { computed, Context } from '@fract/core'
 
-export class Pathname extends Computed<string> {
-    *stream(ctx: Context) {
-        const listener = () => ctx.update()
+export const pathname = computed(function* (ctx: Context) {
+    const listener = () => ctx.update()
 
-        window.addEventListener('popstate', listener)
+    window.addEventListener('popstate', listener)
 
-        try {
-            while (true) {
-                yield window.location.pathname
-            }
-        } finally {
-            window.removeEventListener('popstate', listener)
+    try {
+        while (true) {
+            yield window.location.pathname
         }
+    } finally {
+        window.removeEventListener('popstate', listener)
     }
-}
+})

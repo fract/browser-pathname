@@ -1,4 +1,4 @@
-# Browser pathname fractal
+# Browser pathname computed stream
 
 <div align="center">
 <img src="https://img.shields.io/travis/fract/browser-pathname" alt="travis" />
@@ -17,19 +17,17 @@ npm i @fract/browser-pathname
 
 ```tsx
 import { fractal } from '@fract/core'
-import { Pathname } from '@fract/browser-pathname'
+import { pathname, redirect } from '@fract/browser-pathname'
 import { render } from '@fract/jsx'
 
 const App = fractal(function* () {
-    const pathname = new Pathname()
-
     while (true) {
         switch (yield* pathname) {
             case '/':
-                yield <a onClick={() => pathname.redirect('/test')}>Go to test page</a>
+                yield <a onClick={() => redirect('/test')}>Go to test page</a>
                 continue
             case '/test':
-                yield <a onClick={() => pathname.redirect('/')}>Go to home page</a>
+                yield <a onClick={() => redirect('/')}>Go to home page</a>
                 continue
         }
     }
