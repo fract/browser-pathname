@@ -20,7 +20,7 @@ import { fractal } from '@fract/core'
 import { Pathname } from '@fract/browser-pathname'
 import { render } from '@fract/jsx'
 
-const App = fractal(async function* () {
+const App = fractal(function* () {
     const pathname = new Pathname()
 
     while (true) {
