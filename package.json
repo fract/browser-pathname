@@ -1,12 +1,12 @@
 {
-    "name": "@fract/browser-pathname",
-    "description": "Browser pathname fractal and redirect method",
+    "name": "@whatsup-js/browser-pathname",
+    "description": "Browser pathname conse and redirect method",
     "version": "0.3.0",
     "author": "Denis Churbanov",
     "license": "MIT",
     "repository": {
         "type": "git",
-        "url": "https://github.com/fract/browser-pathname.git"
+        "url": "https://github.com/whatsup/browser-pathname.git"
     },
     "main": "dist/index.cjs.js",
     "module": "dist/index.esm.js",
@@ -20,10 +20,9 @@
         "prepublishOnly": "npm run build"
     },
     "peerDependencies": {
-        "@fract/core": "^0.2.0"
+        "whatsup": "^1.1.0"
     },
     "devDependencies": {
-        "@fract/core": "^0.2.0",
         "@rollup/plugin-commonjs": "^13.0.0",
         "@rollup/plugin-node-resolve": "^8.1.0",
         "@types/jest": "^26.0.4",
@@ -35,7 +34,8 @@
         "rollup-plugin-delete": "^2.0.0",
         "rollup-plugin-typescript2": "^0.27.1",
         "ts-jest": "^26.1.1",
-        "typescript": "^3.9.6"
+        "typescript": "^3.9.6",
+        "whatsup": "^1.1.0"
     },
     "files": [
         "dist",

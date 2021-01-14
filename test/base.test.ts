@@ -2,12 +2,12 @@
  * @jest-environment jsdom
  */
 
-import { watch } from '@fract/core'
+import { whatsUp } from 'whatsup'
 import { pathname } from '../src/pathname'
 import { redirect } from '../src/utils'
 
 const mock = jest.fn()
-const dispose = watch(pathname, mock)
+const dispose = whatsUp(pathname, mock)
 
 it('initial pathname to be "/"', () => {
     expect(mock).lastCalledWith('/')

@@ -1,6 +1,6 @@
-import { computed, Context } from '@fract/core'
+import { cause, Context } from 'whatsup'
 
-export const pathname = computed(function* (ctx: Context) {
+export const pathname = cause(function* (ctx: Context) {
     const listener = () => ctx.update()
 
     window.addEventListener('popstate', listener)
