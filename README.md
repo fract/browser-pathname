@@ -1,24 +1,24 @@
-# Browser pathname computed stream
+# Browser pathname cause stream
 
 <div align="center">
-<img src="https://img.shields.io/travis/fract/browser-pathname" alt="travis" />
-<img src="https://img.shields.io/codecov/c/github/fract/browser-pathname" alt="codecov" />
-<img src="https://img.shields.io/github/languages/top/fract/browser-pathname" alt="language" />
-<img src="https://img.shields.io/npm/l/@fract/browser-pathname" alt="license" />  
+<img src="https://img.shields.io/travis/whatsup/browser-pathname" alt="travis" />
+<img src="https://img.shields.io/codecov/c/github/whatsup/browser-pathname" alt="codecov" />
+<img src="https://img.shields.io/github/languages/top/whatsup/browser-pathname" alt="language" />
+<img src="https://img.shields.io/npm/l/@whatsup-js/browser-pathname" alt="license" />  
 </div>
 
 ## Install
 
 ```bash
-npm i @fract/browser-pathname
+npm i @whatsup-js/browser-pathname
 ```
 
 ## Usage
 
 ```tsx
-import { fractal } from '@fract/core'
-import { pathname, redirect } from '@fract/browser-pathname'
-import { render } from '@fract/jsx'
+import { fractal } from 'whatsup'
+import { render } from '@whatsup-js/jsx'
+import { pathname, redirect } from '@whatsup-js/browser-pathname'
 
 const app = fractal(function* () {
     while (true) {
