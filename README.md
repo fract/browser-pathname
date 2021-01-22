@@ -1,6 +1,7 @@
 # Browser pathname cause stream
 
 <div align="center">
+<img src="https://img.shields.io/github/workflow/status/whatsup/browser-pathname/Node.js%20CI/master" alt="GitHub Workflow Status (branch)" /> 
 <img src="https://img.shields.io/travis/whatsup/browser-pathname" alt="travis" />
 <img src="https://img.shields.io/codecov/c/github/whatsup/browser-pathname" alt="codecov" />
 <img src="https://img.shields.io/github/languages/top/whatsup/browser-pathname" alt="language" />
@@ -11,6 +12,8 @@
 
 ```bash
 npm i @whatsup/browser-pathname
+# or
+yarn add @whatsup/browser-pathname
 ```
 
 ## Usage
